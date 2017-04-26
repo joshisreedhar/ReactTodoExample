@@ -24,4 +24,12 @@ describe('<TodoList />',()=>{
 		expect(child).to.have.prop('text','Todo 2');
 		expect(child).to.have.prop('completed', true);
 	});
+
+	it('sdould toggle onComplete of Todo when onToggleComplete is called', () => {
+		
+		const wrapper = shallow(<TodoList />);
+		wrapper.find('Todo').first().simulate('toggleCompleted');
+		expect(wrapper.find('Todo').first()).to.have.prop('completed',true);
+	
+	});
 });
